@@ -79,6 +79,7 @@
     border: solid #DFD5C8;
     border-radius: 10px;
     padding: 7px;
+    background-color: white;
 }
 .la-taille{
      display: grid;
@@ -90,6 +91,7 @@
      border: solid #DFD5C8;
       border-radius: 10px;
       padding: 7px;
+      background-color: white;
 }
 .last-main{
 display: flex;
