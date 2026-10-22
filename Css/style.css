@@ -34,7 +34,8 @@
 .main-Principal{
     display: flex;
     background-color: rgb(255, 247, 237);
-    height: 650px;
+    height: fit-content;
+
     
 }
 .img >img{
@@ -59,6 +60,12 @@
     padding: 10px;
 }
 
+/* input{
+    /* appearance: none;
+    /* height:50px;
+    width: 50px;
+    background-color: #796A59; */ 
+ 
 
 .base{
     display: grid;
@@ -97,16 +104,57 @@
 display: flex;
 gap: 850PX;
 padding-top: 40px;
-height: 100Px;
+height: fit-content;
 }
-.last-main p{
+.last-main p {
     padding-left: 30px;
     padding-top: 10px;
+}
+.last-main h1{
+    padding-left: 40px;
 }
 .last-main div button{
     padding: 10px;
     background:#394B32;
     border-radius: 7px;
+    color: #FFFFFF;
+}
+
+.page2-prMain{
+    background-color:rgb(255, 247, 237); ;
+}
+.page2-prMain div p,h2{
+    padding-top:20px ;
+    padding-left: 60px;
+    
+}
+
+
+.partie-Pay{
+    padding-top:55px ;
+    padding-left: 50px;
+    background-color: #FFFFFF;
+    width: 700px;
+    height: 500px;
+    border-radius: 15px;
+}
+.partie-Pay h6,h3,p,div{
+    padding:5px ;
+} 
+.partie-Pay div {
+    display: flex;
+    gap: 30px;
+}
+.partie-Pay div span{
+    padding-left: 100px;
+    
+}
+
+.but-pg2{
+    width: 600px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #394B32;
     color: #FFFFFF;
 }
 
@@ -118,4 +166,10 @@ height: 100Px;
     padding-left: 30px;
     font-size: 8px;
     height: 60px;
+}
+
+
+.hidden{
+    display: none;
+    
 }
