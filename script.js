@@ -144,14 +144,7 @@ function claculeOption(event){
 }
 
 
-// arr = [2,4,5]
-// of => 2,4,5
-// in => 0,1,2
-// of(item) / in(index) 
-for(item of orderTicket){
-    // item = {name, price}
-    //item.name
-}
+
 
 
 
