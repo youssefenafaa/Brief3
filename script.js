@@ -113,6 +113,45 @@ let ajouterPanier=document.querySelector(".ajouterPanier");
 
 
 
+let summ=document.querySelector('.summ');
+
+let inputs = document.querySelectorAll('input');
+
+inputs.forEach(inp => {
+    inp.addEventListener("change",claculeOption);
+});
+
+let orderTicket = [];
+  
+function claculeOption(event){
+    // select all checked items
+    let selectedItems = document.querySelectorAll("input")
+    let sum = 0 ;
+    orderTicket = [];
+    selectedItems.forEach(input => {
+        if(input.checked) {
+            // get price
+            let name = input.parentElement.querySelector("span").textContent;
+            let price = Number(input.parentElement.querySelector("p").textContent.replace("DH",""));
+            orderTicket.push({name, price})
+            sum += price;
+        }
+    })
+    // sum
+    summ.textContent= sum + " ,00 DH"
+    // console.log(sum, orderTicket);
+    //
+}
+
+
+// arr = [2,4,5]
+// of => 2,4,5
+// in => 0,1,2
+// of(item) / in(index) 
+for(item of orderTicket){
+    // item = {name, price}
+    //item.name
+}
 
 
 
@@ -138,6 +177,9 @@ let ajouterPanier=document.querySelector(".ajouterPanier");
  
  
  
+
+
+
 let label = document.querySelectorAll('label');
 
 
