@@ -114,6 +114,7 @@ let ajouterPanier=document.querySelector(".ajouterPanier");
 
 
 let summ=document.querySelector('.summ');
+let prixTotale=document.querySelector(".prixTotal");
 
 let inputs = document.querySelectorAll('input');
 
@@ -138,7 +139,9 @@ function claculeOption(event){
         }
     })
     // sum
-    summ.textContent= sum + " ,00 DH"
+    summ.textContent= sum + " ,00 DH";
+    prixTotale.textContent=sum + " ,00 DH";
+
     // console.log(sum, orderTicket);
     //
 }
