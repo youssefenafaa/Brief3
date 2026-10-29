@@ -1,7 +1,7 @@
 
 const config = {
   base: {
-    espresso: { name: "Espresso", price: 18 + "DH"  },
+    espresso: { name: "Expresso", price: 18 + "DH"  },
     filtre: { name: "Filtre", price: 16 +"DH" }
   },
   taille: {
@@ -10,9 +10,9 @@ const config = {
     l: { name: "L · 350 ml", price: 8 +"DH" }
   },
   lait: {
-    vache: { name: "Lait de vache", price: 1 +"DH" },
-    avoine: { name: "Lait d'avoine", price: 4 +"DH" },
-    amande: { name: "Lait d'amande", price: 5  +"DH"}
+    vache: { name: " Vache", price: 1 +"DH" },
+    avoine: { name: " Avoine", price: 4 +"DH" },
+    amande: { name: " Amande", price: 5  +"DH"}
   },
   supplements: {
     caramel: { name: "Caramel", price: 3 +"DH"},
@@ -69,6 +69,7 @@ let ajouterPanier=document.querySelector(".ajouterPanier");
 
  ajouterPanier.addEventListener("click",() => {
   
+    afficherTicket() ;
     page1.classList.add("hidden");
     pag12.classList.add("hidden");
     page2.classList.remove("hidden");
@@ -122,6 +123,9 @@ inputs.forEach(inp => {
     inp.addEventListener("change",claculeOption);
 });
 
+
+
+
 let orderTicket = [];
   
 function claculeOption(event){
@@ -148,7 +152,35 @@ function claculeOption(event){
 
 
 
+function afficherTicket() {
+    orderTicket.forEach(item => {
 
+        if (item.name.includes("Expresso") || item.name.includes("Filtre")) {
+            document.querySelector(".base-name").textContent = `Base · ${item.name}`;
+            document.querySelector(".base-price").textContent = `${item.price} DH`;
+        }
+
+        else if (item.name.includes("ml")) {
+            document.querySelector(".taille-name").textContent = `Taille · ${item.name}`;
+            document.querySelector(".taille-price").textContent = `${item.price} DH`;
+        }
+
+        else if (
+            item.name.includes("Vache") ||
+            item.name.includes("Avoine") ||
+            item.name.includes("Amande")
+        ) {
+            document.querySelector(".lait-name").textContent = `Lait · ${item.name}`;
+            document.querySelector(".lait-price").textContent = `${item.price} DH`;
+        }
+
+        else {
+            document.querySelector(".Supplément-name").textContent = `Supplément · ${item.name}`;
+            document.querySelector(".Supplément-price").textContent = `${item.price} DH`;
+        }
+
+    });
+}
 
 
 
