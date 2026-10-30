@@ -14,9 +14,9 @@ const coffeeProducts = [
 
 // 2. Le tableau des produits dans le panier par défaut (avec un accessoire)
 let coffeeCart = [
-  { id: "c2", name: "Cappuccino Mousseux", price: 4.00, quantity: 2, image: "cappuccino.jpg" },
-  { id: "c3", name: "Latte Caramel", price: 4.50, quantity: 1, image: "latte.jpg" },
-  { id: "c8", name: "Mug Isotherme Noir", price: 15.00, quantity: 1, image: "mug.jpg" }
+  { id: "c2", name: "Cappuccino Mousseux", price: 4.00 , quantity: 2, image: "cappuccino.jpg" },
+  { id: "c3", name: "Latte Caramel", price: 4.50  , quantity: 1, image: "latte.jpg" },
+  { id: "c8", name: "Mug Isotherme Noir", price: 15.00 , quantity: 1, image: "mug.jpg" }
 ];
 
 
@@ -81,7 +81,7 @@ butPlus.addEventListener("click",() => {
     
     let  quantity = ++item.quantity;
    cardsQuantity.textContent=quantity;
-  
+  affichage()
 }
 )
 
@@ -90,7 +90,8 @@ butMoin.addEventListener("click",()=>{
 let quantity=--item.quantity;
     
     cardsQuantity.textContent=quantity;
-   }
+affichage()   
+}
     
 })
 
@@ -106,21 +107,21 @@ return card;
 
 
 
-////µ*******************fonction d'affiche les elements******************/
+/*******************fonction d'affiche les elements******************/
+const PrixTotalElement=document.querySelector(".prixTotale")
 
 function affichage(){
+   listeCards.innerHTML="" 
 coffeeCart.forEach(Element => {
    
    const donneData=createCards(Element);
-   console.log(donneData)
-   listeCards.appendChild(donneData);
-     
+    listeCards.appendChild(donneData);
+   PrixTotalElement.textContent=calculTotale()
     
 });
 
 }
- console.log("test")
-
+ 
 affichage();
 
 
@@ -128,10 +129,15 @@ affichage();
 
 
 ///*************Prix Totale */
-const PrixTotal=document.querySelector(".prixTotale")
+
 
 function calculTotale(){
- 
+ let total=0;
+    coffeeCart.forEach(element => {
+        total +=element.price * element.quantity
+
+    });
+    return total;
 }
 
 
