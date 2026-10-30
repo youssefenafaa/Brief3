@@ -45,6 +45,7 @@ main{
 .cards{
     display: flex;
     align-items: center;
+    justify-content: space-around;
     gap: 16px;
     padding-bottom:16px ;
     border-bottom:solid 1px grey ;
@@ -52,7 +53,10 @@ main{
     
 }
 .div2{
-   
+   display: flex;
+   gap: 10px;
 }
-
+.But{
+    padding: 4px;
+}
 

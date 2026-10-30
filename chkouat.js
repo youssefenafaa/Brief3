@@ -29,8 +29,6 @@ let coffeeCart = [
 const listeCards=document.querySelector(".listeCards")
 
 
-
-
 function createCards(item){
 /*******Div Principale***************/
 const card=document.createElement("div");
@@ -65,8 +63,9 @@ butPlus.textContent="+"
 const butMoin=document.createElement("button")
 butMoin.className="But"
 butMoin.textContent="-"
-div2.appendChild(cardsQuantity)
+
 div2.appendChild(butPlus)
+div2.appendChild(cardsQuantity)
 div2.appendChild(butMoin)
 
 /************push in  div Pricipale *********/
@@ -76,10 +75,38 @@ card.appendChild(div1)
 card.appendChild(div2)
 
 
+
+/********************************* Event Click sur les button */
+butPlus.addEventListener("click",() => {
+    
+    let  quantity = ++item.quantity;
+   cardsQuantity.textContent=quantity;
+  
+}
+)
+
+butMoin.addEventListener("click",()=>{
+   if(item.quantity > 1){
+let quantity=--item.quantity;
+    
+    cardsQuantity.textContent=quantity;
+   }
+    
+})
+
 return card;
 
 }
 
+
+
+
+
+
+
+
+
+////µ*******************fonction d'affiche les elements******************/
 
 function affichage(){
 coffeeCart.forEach(Element => {
@@ -100,6 +127,12 @@ affichage();
 
 
 
+///*************Prix Totale */
+const PrixTotal=document.querySelector(".prixTotale")
+
+function calculTotale(){
+ 
+}
 
 
 
