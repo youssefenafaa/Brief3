@@ -49,6 +49,7 @@ main{
     gap: 16px;
     padding-bottom:16px ;
     border-bottom:solid 1px grey ;
+    padding: 50px;
     
     
 }
@@ -59,4 +60,41 @@ main{
 .But{
     padding: 4px;
 }
+.modale{
+    width: 400px;
+    height: 30px;
+    color: #FFFFFF;
+    background-color: #394B32;
+}
+.inputModale{
+    background-color: #394B32;
+    color: #FFFFFF;
+    background-color: #394B32;
+}
+#dialog{
+    margin: 70px 0px 0px 400px;
+}
 
+.formulaire-validation{
+    padding-top: 30px;
+    padding-right: 50px;
+    margin: 20px;
+    background-color:#394B32;
+    color: #FFFFFF;
+    width: 500Px;
+
+}
+.formulaire-validation div label ,input{
+    margin: 5px;
+}
+.formulaire-validation div h1{
+    color: black;
+}
+.formulaire-validation div button{
+    width: 400Px;
+    height: 20Px;
+
+}
+.hidden{
+    display: none;
+}

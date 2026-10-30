@@ -142,11 +142,137 @@ function calculTotale(){
 
 
 
+////************************************Modal Rcherche*******************/
+const ButModal=document.querySelector(".modale")
+
+
+
+      const list = document.querySelector('.list')
+
+      const inputRecherche = document.querySelector('input');
+
+     
+      inputRecherche.addEventListener('input' , () =>{
+
+        
+      const search = inputRecherche.value.toLowerCase(); // ""
+          list.innerHTML  = "" ;  
+   if(search ===""){//true
+    list.innerHTML="<p>choisir un choix</p>"
+    } 
+      
+
+    else{
+        const result =  coffeeProducts.filter(product => 
+          product.name.toLowerCase().includes(search)
+
+      );
+      
+
+      result.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.className="divPracipale"
+
+        const productname=document.createElement('span')
+        productname.className="nome"
+
+        const productPrice=document.createElement('span')
+        productPrice.className="price"
+
+        const buttonModal=document.createElement('button')
+        buttonModal.className="buutModel"
+        
+        const spanButt=document.createElement('span')
+        spanButt.textContent= " ajouter" ;
+        buttonModal.appendChild(spanButt)
+
+
+
+        productname.innerHTML = product.name ;
+        productPrice.innerHTML=product.price;
+
+       
+        productElement.appendChild(productname);
+        productElement.appendChild(productPrice);
+        productElement.appendChild(buttonModal);
+
+        list.appendChild(productElement);
+
+
+      }) 
+    }
+     
+     
+
+      })
+
+
+
+//******************************Event sur model********** */
+
+
+const dialog=document.querySelector("#dialog")
+
+ButModal.addEventListener("click",()=>{
+    dialog.showModal()
+})
 
 
 
 
 
+/********************fonction create elemnt Pour ajouter***********/
 
+function createElement(){
+
+const card=document.createElement("div");
+card.className="cards"
+/******partie Image *********************/
+const Img=document.createElement("img")
+Img.className="cardsImg"
+Img.src="assets/image/" +  item.image
+/******Div 1:Nom et prenom  ************/
+const div1=document.createElement("div")
+div1.className="div1"
+const cardsName=document.createElement("h4")
+cardsName.className="cardsName"
+cardsName.innerText=item.name
+const cardsPrice=document.createElement("p")
+cardsPrice.className="cardsPrice"
+cardsPrice.innerText=item.price
+div1.appendChild(cardsName)
+div1.appendChild(cardsPrice)
+
+
+card.appendChild(Img)
+card.appendChild(div1)
+
+    
+};
+
+
+
+
+///*******************************regex in input ******************************************** */
+const Prenomlement=document.querySelector("#Prenom").value
+const Nom=document.querySelector("#Nom").value
+const email=document.querySelector("#email").value
+const nmeroCarte=document.querySelectorAll("#nmeroCarte").values
+
+
+//*********************form******************** */
+const formElemnts=document.querySelector(".form")
+formElemnts
+
+////*****************Email */
+const messageElemen=document.querySelector(".message")
+const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+if (regex.test(email)) {
+    messageElemen.textContent= "Valid Email address.";
+} else {
+    messageElemen.textContent="Invalid Email address.";
+}
+console.log(messageElemen)
+//*************card */
 
 

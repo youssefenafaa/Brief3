@@ -44,28 +44,32 @@
            <h5>Prix Total</h5>
             <p class="prixTotale"></p>
           </div>
+        <div>
+               <button class="modale" type="button">
+                   ajouter autre elements
+          </button>
+        </div>
+          
+          <div class="inputModale ">
+            <dialog id="dialog">
+          <label for="">recherche un elements </label>
+          <input type="text">
+         <div class="list"></div>
+            </dialog>
+        
+          </div>
+        
+
     </section>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     <section class="formulaire-validation">
-    <form action="">
+    <form action="" class="form">
     <div> <h1> Informations de livraison </h1></div>
-   <div>
+   <div >
     <label for="Prenom">Prenom</label>
     <input type="text" id="Prenom">
 
@@ -77,7 +81,8 @@
      </div>
      <div>
         <label for="email">email</label>
-        <input type="email">
+        <input type="email" id="email">
+        <p class="message"></p>
 
      </div>
      <div>
@@ -85,7 +90,7 @@
      </div>
      <div>
         <label for="">Numero de carte</label>
-        <input type="number">
+        <input type="number" id="nmeroCarte">
      </div>
      <div>
         <label for="">Date d'expiration</label>
