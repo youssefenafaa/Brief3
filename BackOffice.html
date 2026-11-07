@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- -- bootstrap CSS -- 
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+   <!-- <!- -- bootstrap CSS -- !> -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
    <link rel="stylesheet" href="BackOffice.css"> 
     <title>BackOffice</title>
 
@@ -95,24 +95,25 @@
 
 </section>
  
-<section class="Info-General hideen " id="section2">
+<section class="Info-General   " id="section2">
     <div class="title-section">
      <h3 class="display-6 "> <strong>Caractéristiques & Options</strong></h3>
    </div>
      <div class="col-md-4 mb-3">
-    <select class="form-select ">
-  <option value="titre" >Origine des grains </option>
-  <option value="1">Colombie</option>
-  <option value="2">Éthiopie</option>
-  <option value="3">Brésil</option>
-   <option value="4">Mélange Maison</option>
+    <select class="form-select " id="select">
+  <option value="" >Origine des grains </option>
+  <option value="Colombie">Colombie</option>
+  <option value="Éthiopie">Éthiopie</option>
+  <option value="Brésil">Brésil</option>
+   <option value="Mélange Maison">Mélange Maison</option>
 
 </select>
+             <div class="MessageSelect"></div>
      </div>
      
      <div class="col-md-4 mb-3">
         <label for="customRange1"  >Niveau de torréfaction / Intensité  (de 1 a 10) </label>
-        <input type="range"  id="customRange1" name="Intensité" min="0" max="10">
+        <input type="range" class="inputRange"  id="customRange1" name="Intensité" min="0" max="10">
      </div>
 
 
@@ -122,13 +123,13 @@
             
         
             <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Chaud">
   <label class="form-check-label" for="flexRadioDefault1">
     Chaud
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Glacé">
   <label class="form-check-label" for="flexRadioDefault2">
     Glacé
   </label>
@@ -141,15 +142,22 @@
             <p><strong>Tailles disponibles</strong></p>
         </div>
  <div class="btn-group backrondBut" role="group" aria-label="Basic checkbox toggle button group">
-  <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-  <label class="btn btn-outline-primary" for="btncheck1">Small </label>
+ 
+  <label class="btn btn-outline-primary"  for="btncheck1" >
+      <input type="checkbox" id="btncheck1" value="Small">Small
+  </label>
 
-  <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-  <label class="btn btn-outline-primary" for="btncheck2">Medieum</label>
+  
+  <label class="btn btn-outline-primary"  for="btncheck2">
+    <input type="checkbox" id="btncheck2" value="Medieum" >Medieum
+  </label>
 
-  <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-  <label class="btn btn-outline-primary" for="btncheck3">Large</label>
+  
+  <label class="btn btn-outline-primary" for="btncheck3">
+    <input type="checkbox"  id="btncheck3" value="Large" >Large
+  </label>
 </div>
+<div class="MessageTaille"></div>
      </div>
 
 
@@ -159,18 +167,25 @@
             <p><strong>  Options de lait</strong></p>
         </div>
  <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-  <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
-  <label class="btn btn-outline-primary" for="btncheck4">Vache </label>
+  
+  <label class="btn btn-outline-primary" for="btncheck4">
+    <input type="checkbox"  id="btncheck4" value="Vache"> Vache </label>
 
-  <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
-  <label class="btn btn-outline-primary" for="btncheck5">Avoine</label>
+  
+  <label class="btn btn-outline-primary" for="btncheck5">
+    <input type="checkbox"  id="btncheck5" value="Avoine" >Avoine</label>
 
-  <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
-  <label class="btn btn-outline-primary" for="btncheck6"> Soja</label>
+  
+  <label class="btn btn-outline-primary" for="btncheck6">
+    <input type="checkbox"  id="btncheck6" value="Soja">
+     Soja</label>
 
-  <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
-  <label class="btn btn-outline-primary" for="btncheck7"> Amande</label>
+ 
+  <label class="btn btn-outline-primary" for="btncheck7">
+     <input type="checkbox"  id="btncheck7" value="Amande" >
+     Amande</label>
 </div>
+<div class="OptionMessage"></div>
      </div>
 
 
@@ -181,15 +196,22 @@
             <p><strong>Suppléments </strong></p>
         </div>
  <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-  <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off">
-  <label class="btn btn-outline-primary" for="btncheck8">Vanille </label>
+  
+  <label class="btn btn-outline-primary" for="btncheck8">
+    <input type="checkbox"  id="btncheck8" value="Vanille" >
+    Vanille </label>
 
-  <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-  <label class="btn btn-outline-primary" for="btncheck9">Caramel</label>
+ 
+  <label class="btn btn-outline-primary" for="btncheck9">
+     <input type="checkbox"  id="btncheck9" value="Caramel" >
+     Caramel</label>
 
-  <input type="checkbox" class="btn-check" id="btncheck10" autocomplete="off">
-  <label class="btn btn-outline-primary" for="btncheck10">Noisette</label>
+
+  <label class="btn btn-outline-primary" for="btncheck10" >
+      <input type="checkbox"  id="btncheck10" value="Noisette" >
+      Noisette</label>
 </div>
+<div class="SuplementMessage"></div>
      </div>
 
 <div >
@@ -200,14 +222,93 @@
    
 
 </section>
-<section class="hideen" id="section3">
-  <div>aaaaa</div>
 
-</section>
 <!-- <label class="form-label">Example range</label>
 <input type="range" class="form-range" id="customRange1" -->
 
             </form>
+            
+            
+            
+      <section class="Info-General " id="section3">
+              <div>
+                 <h3 class="display-6"> <strong>Récapitulatif</strong></h3>
+              </div>
+
+              
+              <div class="affichage-Info-General">
+                 <h3 ><strong>Information Generale</strong></h3>
+               
+                 <div class="">
+                <img src="" alt="" id="Affichage-img">
+              </div>
+
+              <div class="">
+                <p><strong>Nom de la boisson :</strong></p>
+
+                <p ><strong class="Affichage-Nom" ></strong></p>
+                
+              </div>
+              <div>
+                 <p><strong>Prix de base :</strong></p>
+                <p class="Affichage-Prix"></p>
+              </div>
+
+              <div class="">
+                <p><strong>Description : </strong></p>
+
+                 <p class="Afichege-Description"></p>
+              </div>
+
+              <div class="">
+                   
+                   <p class="Afichage-Porcentage"></p>
+                 
+              </div>
+              <div>
+                  <p class="Affichage-Date"></p>
+              </div>
+
+              </div>
+              
+
+
+
+              <div class="Affichage-CaracOption">
+
+                        <h3 ><strong>Caractéristiques & Options</strong></h3>
+                    <div class="">
+
+                      <p class="Affichage-OrigineGrains"> </p>
+
+                    </div>
+                    <div >
+                    <p class="affichage-Intensite"></p>
+                    </div>
+                    <div>
+                      <p class="Affichage-Temperature"></p>
+                    </div>
+                    <div class="Affichage-Taille">
+                      <p class="Afichage-small"></p>
+                      <p class="Afichage-Medieum"></p>
+                      <p class="Afichage-Large"></p>
+                    </div>
+                     <div class="Affichage-Option">
+                      <p class="Afichage-Vache"></p>
+                      <p class="Afichage-Avoine"></p>
+                      <p class="Afichage-Soja"></p>
+                      <p class="Afichage-Amande"></p>
+                    </div>
+
+                         <div class="Affichage-Supplements">
+                      <p class="Afichage-Vanille"></p>
+                      <p class="Afichage-Caramel"></p>
+                      <p class="Afichage-Noisette"></p>
+                     
+                    </div>
+              </div>
+
+</section>
 
 
     
