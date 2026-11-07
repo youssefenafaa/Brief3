@@ -81,9 +81,14 @@ ButNext.addEventListener("click",()=>{
    if((ValideName(inputNomElement.value)==true) &&(ValidePrice(inputPriceElement.value)==true)&& (ValideUrlImage(inputUrlImage.value)==true)  &&   ( !inputPromotion.checked || ((ValidePorcentage(inputPorcentagElement.value)==true)&& (ValideDateFin(inputDateFinElement.value)==true))))
         {
             progressBar.value=2;
+                alert("Premier etape valide avec succes")
+        
   Partie1.classList.add("hideen")
     Partie2.classList.remove("hideen")
 
+        }
+        else{
+                alert("veuillez remplir correctement les champs")
         }
         affichage()
   
@@ -350,8 +355,12 @@ butEnregestrer.addEventListener("click",()=>{
 && (inputOption1.checked==true ||  inputOption2.checked==true ||  inputOption3.checked==true ||  inputOption4.checked==true)
 && (inputSuplement1.checked==true ||  inputSuplement2.checked==true ||  inputSuplement3.checked==true) ){
                                   progressBar.value=3;
+                                  alert("Deuxieme etape valide avec succes")
                                 Partie2.classList.add("hideen")
                                 Partie3.classList.remove("hideen")
+}
+else{
+     alert("veuillez remplir correctement les champs")
 }
         
 
