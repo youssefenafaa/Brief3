@@ -357,4 +357,10 @@ butEnregestrer.addEventListener("click",()=>{
 
     
 })
+const btnReteurP2=document.querySelector("#btnReteurP2")
+btnReteurP2.addEventListener("click",()=>{
 
+    
+             Partie3.classList.add("hideen")
+             Partie2.classList.remove("hideen")
+})
