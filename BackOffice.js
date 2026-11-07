@@ -16,7 +16,7 @@ const DateChamp=document.querySelector('.DateChamp')
  const Partie1=document.querySelector("#section1")
  const Partie2=document.querySelector("#section2")
                     
-
+const inputPromotion=document.querySelector(".InputPromotion")
  
 let CheksName=document.createElement('p')
     
@@ -52,21 +52,32 @@ ButNext.addEventListener("click",()=>{
           ChekUrl.style.color = "red"
         UrlChamp.appendChild(ChekUrl)
     }
+
+
     
-         ChekPorcentage.textContent=""
+ ChekPorcentage.textContent=""
+ ChekDate.textContent=""
+ if(inputPromotion.checked){
    if(ValidePorcentage(inputPorcentagElement.value)==false){
         ChekPorcentage.textContent="champs Invalide"
           ChekPorcentage.style.color = "red"
         PorcentageChamp.appendChild(ChekPorcentage)
-   }
-         ChekDate.textContent=""
+ }
+ 
+          
    if(ValideDateFin(inputDateFinElement.value)==false){
           ChekDate.textContent="champs Invalide"
          ChekDate.style.color = "red"
        DateChamp.appendChild(ChekDate)
    }
 
-   if((ValideName(inputNomElement.value)==true) &&(ValidePrice(inputPriceElement.value)==true)&& (ValideUrlImage(inputUrlImage.value)==true) &&(ValidePorcentage(inputPorcentagElement.value)==true)&& (ValideDateFin(inputDateFinElement.value)==true))
+
+   }
+    
+        
+
+
+   if((ValideName(inputNomElement.value)==true) &&(ValidePrice(inputPriceElement.value)==true)&& (ValideUrlImage(inputUrlImage.value)==true)  &&   ( !inputPromotion.checked || ((ValidePorcentage(inputPorcentagElement.value)==true)&& (ValideDateFin(inputDateFinElement.value)==true))))
         {
   Partie1.classList.add("hideen")
     Partie2.classList.remove("hideen")
@@ -80,7 +91,6 @@ ButNext.addEventListener("click",()=>{
 
 
 
-const inputPromotion=document.querySelector(".InputPromotion")
 const DivPorcentage=document.querySelector("#divPorcentage")
 const DivDate=document.querySelector("#DivDate")
 
@@ -169,8 +179,14 @@ function affichage(){
 affichageNome.textContent=inputNomElement.value
 affichagePrix.textContent=inputPriceElement.value +"DH"
 AfichegeDescription.textContent=inputDescriptionElemnet.value
-AfichagePorcentage.textContent=" Porcentage " +  inputPorcentagElement.value +"%"
+
+  AfichagePorcentage.textContent=""
+  AffichageDate.textContent= ""
+if(inputPromotion.checked){
+    AfichagePorcentage.textContent=" Porcentage " +  inputPorcentagElement.value +"%"
 AffichageDate.textContent= "Date Fin  " + inputDateFinElement.value
+}
+
 
 
 // SECTION2
@@ -244,6 +260,8 @@ if(inputSuplement3.checked){
 
 
 const Partie3=document.querySelector("#section3")
+
+
 const butEnregestrer=document.querySelector("#btnEregister")
 const butRetourP1=document.querySelector("#btnReteurP1")
 
@@ -251,28 +269,12 @@ const butRetourP1=document.querySelector("#btnReteurP1")
 
 butRetourP1.addEventListener("click",()=>{
      
-    // if(selectForm.checked==false){
-    //     console.log("erreur")
-    //      SlectMessage.textContent="champs Invalide"
-    //       SlectMessage.style.color = "red"
-           
-       
-    // }
-
-    // if(inputChek1.checked==false ||inputChek2.checked==false || inputChek3.checked==false){
-           
-    // }
-    //     (
-    // && (inputChek1.checked==true ||inputChek2.checked==true || inputChek3.checked==true)
-    // &&(inputOption1.checked==true||inputOption2.checked==true||inputOption3.checked==true ||inputOption4.checked==true)
-    // &&(inputSuplement1.checked==true||inputSuplement2.checked==true||inputSuplement2.checked==true) ){
-    //          Partie2.classList.add("hideen")
-    //          Partie1.classList.remove("hideen")
-    // }
-    // else{
-    //     console.log("ereeur")
-    // }
-
+    
+             Partie2.classList.add("hideen")
+             Partie1.classList.remove("hideen")
+    
+        
+  
 })
 
 
@@ -314,7 +316,7 @@ let CheSuplement=document.createElement('p')
 
 butEnregestrer.addEventListener("click",()=>{
          CheksSelect.textContent=""
-     if(selectForm.value==false){
+     if(selectForm.value==""){
        CheksSelect.textContent="champs Invalide"
           CheksSelect.style.color = "red"
           SlectMessage.appendChild(CheksSelect)
@@ -339,12 +341,8 @@ butEnregestrer.addEventListener("click",()=>{
          CheSuplement.style.color = "red"
          SuplementMessage.appendChild(CheSuplement)
        }
-
-        
-       affichage()
-
-
-    if((selectForm.value==true)
+       
+    if((selectForm.value !=="")
 &&(inputChek1.checked==true || inputChek2.checked==true || inputChek3.checked==true)
 && (inputOption1.checked==true ||  inputOption2.checked==true ||  inputOption3.checked==true ||  inputOption4.checked==true)
 && (inputSuplement1.checked==true ||  inputSuplement2.checked==true ||  inputSuplement3.checked==true) ){
@@ -352,6 +350,11 @@ butEnregestrer.addEventListener("click",()=>{
                                 Partie3.classList.remove("hideen")
 }
         
+
+        
+       affichage()
+
+
     
 })
 
