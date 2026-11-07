@@ -45,6 +45,11 @@
     display: none;
 }
 
+#progressBar {
+    width: 100%;
+    height: 12px;
+    accent-color: rgb(18, 88, 18);
+}
 
 
 

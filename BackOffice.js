@@ -6,6 +6,7 @@ const inputDateFinElement=document.querySelector("#inputDate")
 const inputDescriptionElemnet=document.querySelector("#inputDescription")
 
 const ButNext=document.querySelector("#nextbtn")
+const progressBar=document.querySelector("#progressBar");
 
 const NomChamp=document.querySelector('.nomChamp')
 const PriceChamp=document.querySelector('.priceChamp')
@@ -79,8 +80,10 @@ ButNext.addEventListener("click",()=>{
 
    if((ValideName(inputNomElement.value)==true) &&(ValidePrice(inputPriceElement.value)==true)&& (ValideUrlImage(inputUrlImage.value)==true)  &&   ( !inputPromotion.checked || ((ValidePorcentage(inputPorcentagElement.value)==true)&& (ValideDateFin(inputDateFinElement.value)==true))))
         {
+            progressBar.value=2;
   Partie1.classList.add("hideen")
     Partie2.classList.remove("hideen")
+
         }
         affichage()
   
@@ -269,7 +272,7 @@ const butRetourP1=document.querySelector("#btnReteurP1")
 
 butRetourP1.addEventListener("click",()=>{
      
-    
+             progressBar.value=1;
              Partie2.classList.add("hideen")
              Partie1.classList.remove("hideen")
     
@@ -346,6 +349,7 @@ butEnregestrer.addEventListener("click",()=>{
 &&(inputChek1.checked==true || inputChek2.checked==true || inputChek3.checked==true)
 && (inputOption1.checked==true ||  inputOption2.checked==true ||  inputOption3.checked==true ||  inputOption4.checked==true)
 && (inputSuplement1.checked==true ||  inputSuplement2.checked==true ||  inputSuplement3.checked==true) ){
+                                  progressBar.value=3;
                                 Partie2.classList.add("hideen")
                                 Partie3.classList.remove("hideen")
 }
@@ -360,7 +364,7 @@ butEnregestrer.addEventListener("click",()=>{
 const btnReteurP2=document.querySelector("#btnReteurP2")
 btnReteurP2.addEventListener("click",()=>{
 
-    
+               progressBar.value=2;
              Partie3.classList.add("hideen")
              Partie2.classList.remove("hideen")
 })
